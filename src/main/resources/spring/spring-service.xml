@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:tx="http://www.springframework.org/schema/tx"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context.xsd
 	http://www.springframework.org/schema/tx
-	http://www.springframework.org/schema/tx/spring-tx.xsd">
+	http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 	<!-- 扫描service包下所有使用注解的类型 -->
 	<context:component-scan base-package="com.soecode.lyf.service" />
 
@@ -19,6 +19,23 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 
+    <!--===============================事务配置========================================================================-->
+	<!--开启基于注解的事务，使用基于xml配置形式的事务（必要主要的都是使用配置式）-->
+	<!--<aop:config>
+		&lt;!&ndash;切入点表达式&ndash;&gt;
+		<aop:pointcut id="txPoint" expression="execution(* com.soecode.lyf.service.impl..*(..))"/>
+        &lt;!&ndash;配置事务增强&ndash;&gt;
+        <aop:advisor advice-ref="txPoint" pointcut="txadvice"/>
+	</aop:config>
+    &lt;!&ndash;配置事务增强,事务如何切入&ndash;&gt;
+    <tx:advice id="txadvice">
+        <tx:attributes>
+            &lt;!&ndash;所有的方法都是事务方法&ndash;&gt;
+            <tx:method name="*"/>
+            &lt;!&ndash;以get开头的所有方法&ndash;&gt;
+            <tx:method name="get*" read-only="true"/>
+        </tx:attributes>
+    </tx:advice>-->
 	<!-- 配置基于注解的声明式事务 -->
 	<tx:annotation-driven transaction-manager="transactionManager" />
 </beans>
