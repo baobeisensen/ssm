@@ -20,4 +20,21 @@ public class LoginServiceImpl implements LoginService{
 		}
 
 	}
+
+	@Override
+	public String register(String userName, String pwd) {
+		//判断是否帐号重复
+		Integer ifhaveduserName = loginDao.ifhaveduserName(userName);
+		if (1<=ifhaveduserName){
+			return "帐号已存在";
+		}else {
+			Integer result = loginDao.insert(userName,pwd);
+			if (1==result){
+				return "success";
+			}else {
+				return "网络异常,请稍后再试";
+			}
+		}
+	}
+
 }

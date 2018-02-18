@@ -16,7 +16,13 @@
         AND
         PASSWORD = #{pwd}
     </select>
+    <select id="ifhaveduserName" resultType="int">
+        SELECT Count(*) from user WHERE userName=#{userName}
+    </select>
 
+    <insert id="insert">
+        INSERT INTO user SET UserName =#{userName},passWord =#{pwd}
+    </insert>
     <!--<select id="queryAll" resultType="Book">
         SELECT
         book_id,

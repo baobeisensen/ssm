@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -35,21 +36,24 @@ public class LoginController {
         return "login";
 
     }*/
-	@ResponseBody
+	//@ResponseBody
 	@RequestMapping("/login")
-	public String login(@Param("userName") String userName, @Param("password") String password, Model model, HttpSession session){
+	public String login(@RequestParam(defaultValue = "username") String userName, @RequestParam(defaultValue = "password") String password, Model model, HttpSession session){
+		logger.info("用户"+userName+"登陆");
 		try{
 		String loginResult = loginService.login(userName,password);
-		if (loginResult!=null){
+		if (loginResult!=null&&!("").equals(loginResult)&&!("帐号或密码错误").equals(loginResult)){
 			User user = new User();
 			user.setUserName(userName);
 			user.setPassWord(password);
 			session.setAttribute("user", user);
 			model.addAttribute("msg", loginResult);
 			return "cpts_649_bpo/index";
-		}else{
+		}else if(("帐号或密码错误").equals(loginResult)){
 			logger.info("登陆失败：用户名"+userName+"密码:"+password+"失败信息："+loginResult);
 			model.addAttribute("msg", "帐号或密码错误");
+			return "login";
+		}else {
 			return "Exception";
 		}
 
@@ -72,4 +76,12 @@ public class LoginController {
 		}
 		return "news";
 	}
+	@ResponseBody
+	@RequestMapping("/register")
+	public String register(ModelAndView modelAndView,@Param("userName") String userName,@Param("pwd")String pwd){
+		String ifhave = loginService.register(userName,pwd);
+		return ifhave;
+
+	}
+
 }
