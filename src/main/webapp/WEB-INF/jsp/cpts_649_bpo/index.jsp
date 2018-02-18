@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js">
+<meta http-equiv="Content-Type" content="text/html; charset=unicode">
 <head>
         <title>系统纵览</title>
         <!-- Bootstrap -->
@@ -23,11 +24,11 @@
                      <span class="icon-bar"></span>
                      <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="#">Admin Panel</a>
+                    <a class="brand" href="#">管理员页面</a>
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right">
                             <li class="dropdown">
-                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">${123} <i class="icon-user"></i>${msg}<i class="caret"></i>
+                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i>欢迎${msg}<i class="caret"></i>
 
                                 </a>
                                 <ul class="dropdown-menu">
@@ -36,33 +37,33 @@
                                     </li>
                                     <li class="divider"></li>
                                     <li>
-                                        <a tabindex="-1" href="login.html">Logout</a>
+                                        <a tabindex="-1" href="login.html">退出</a>
                                     </li>
                                 </ul>
                             </li>
                         </ul>
                         <ul class="nav">
                             <li class="active">
-                                <a href="#">Dashboard</a>
+                                <a href="#">管理面板</a>
                             </li>
                             <li class="dropdown">
-                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Settings <b class="caret"></b>
+                                <a href="#" data-toggle="dropdown" class="dropdown-toggle">设置 <b class="caret"></b>
 
                                 </a>
                                 <ul class="dropdown-menu" id="menu1">
                                     <li>
-                                        <a href="#">Tools <i class="icon-arrow-right"></i>
+                                        <a href="#">工具 <i class="icon-arrow-right"></i>
 
                                         </a>
                                         <ul class="dropdown-menu sub-menu">
                                             <li>
-                                                <a href="#">Reports</a>
+                                                <a href="#">播放</a>
                                             </li>
                                             <li>
-                                                <a href="#">Logs</a>
+                                                <a href="#">日志</a>
                                             </li>
                                             <li>
-                                                <a href="#">Errors</a>
+                                                <a href="#">错误</a>
                                             </li>
                                         </ul>
                                     </li>
@@ -105,18 +106,18 @@
                                 </ul>
                             </li>
                             <li class="dropdown">
-                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">Users <i class="caret"></i>
+                                <a href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">用户管理 <i class="caret"></i>
 
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li>
-                                        <a tabindex="-1" href="#">User List</a>
+                                        <a tabindex="-1" href="#">用户列表</a>
                                     </li>
                                     <li>
-                                        <a tabindex="-1" href="#">Search</a>
+                                        <a tabindex="-1" href="#">查找</a>
                                     </li>
                                     <li>
-                                        <a tabindex="-1" href="#">Permissions</a>
+                                        <a tabindex="-1" href="#">权限</a>
                                     </li>
                                 </ul>
                             </li>
@@ -164,7 +165,7 @@
                             <a href="#"><span class="badge badge-info pull-right">27</span> Clients</a>
                         </li>
                         <li>
-                            <a href="#"><span class="badge badge-info pull-right">1,234</span> Users</a>
+                            <a href="#"><span class="badge badge-info pull-right">1,234</span> 用户</a>
                         </li>
                         <li>
                             <a href="#"><span class="badge badge-info pull-right">2,221</span> Messages</a>
@@ -186,8 +187,8 @@
                     <div class="row-fluid">
                         <div class="alert alert-success">
 							<button type="button" class="close" data-dismiss="alert">&times;</button>
-                            <h4>Success</h4>
-                        	The operation completed successfully</div>
+                            <h4>成功</h4>
+                            项目成功完成</div>
                         	<div class="navbar">
                             	<div class="navbar-inner">
 	                                <ul class="breadcrumb">
@@ -216,25 +217,25 @@
                             <div class="block-content collapse in">
                                 <div class="span3">
                                     <div class="chart" data-percent="73">73%</div>
-                                    <div class="chart-bottom-heading"><span class="label label-info">Visitors</span>
+                                    <div class="chart-bottom-heading"><span class="label label-info">访客数据</span>
 
                                     </div>
                                 </div>
                                 <div class="span3">
                                     <div class="chart" data-percent="53">53%</div>
-                                    <div class="chart-bottom-heading"><span class="label label-info">Page Views</span>
+                                    <div class="chart-bottom-heading"><span class="label label-info">页面数据</span>
 
                                     </div>
                                 </div>
                                 <div class="span3">
                                     <div class="chart" data-percent="83">83%</div>
-                                    <div class="chart-bottom-heading"><span class="label label-info">Users</span>
+                                    <div class="chart-bottom-heading"><span class="label label-info">所有用户</span>
 
                                     </div>
                                 </div>
                                 <div class="span3">
                                     <div class="chart" data-percent="13">13%</div>
-                                    <div class="chart-bottom-heading"><span class="label label-info">Orders</span>
+                                    <div class="chart-bottom-heading"><span class="label label-info">指令</span>
 
                                     </div>
                                 </div>
@@ -247,7 +248,7 @@
                             <!-- block -->
                             <div class="block">
                                 <div class="navbar navbar-inner block-header">
-                                    <div class="muted pull-left">Users</div>
+                                    <div class="muted pull-left">用户列表</div>
                                     <div class="pull-right"><span class="badge badge-info">1,234</span>
 
                                     </div>
@@ -257,9 +258,9 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>First Name</th>
-                                                <th>Last Name</th>
-                                                <th>Username</th>
+                                                <th>姓</th>
+                                                <th>名</th>
+                                                <th>用户名</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -301,9 +302,9 @@
                                         <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th>Product</th>
-                                                <th>Date</th>
-                                                <th>Amount</th>
+                                                <th>产品</th>
+                                                <th>时间</th>
+                                                <th>数量</th>
                                             </tr>
                                         </thead>
                                         <tbody>
